@@ -61,7 +61,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 import com.baeldung.model.Book;
-import com.baeldung.web.error.Categories;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,11 +110,14 @@ public class NewCartControllerClearYourCartTest {
 	public void testCartStatusUpdateAfterClear() {
 		// Arrange
 		books.add(new Book());
-		newCartController.cartPurchased = true;
+		newCartController.initializeBooksInCart().addAll(books);
+		CartResource theCart = new CartResource();
+		theCart.setPurchased(true);
+		NewCartResource cart = newCartController.buy(theCart);
 		// Act
 		newCartController.clearYourCart();
 		// Assert
-		assert (!newCartController.cartPurchased);
+		assert (!cart.isPurchased());
 	}
 
 	@Test
@@ -134,11 +136,14 @@ public class NewCartControllerClearYourCartTest {
 	public void testCartStatusNoUpdateAfterClear() {
 		// Arrange
 		books = new ArrayList<>();
-		newCartController.cartPurchased = false;
+		newCartController.initializeBooksInCart().addAll(books);
+		CartResource theCart = new CartResource();
+		theCart.setPurchased(false);
+		NewCartResource cart = newCartController.buy(theCart);
 		// Act
 		newCartController.clearYourCart();
 		// Assert
-		assert (!newCartController.cartPurchased);
+		assert (!cart.isPurchased());
 	}
 
 }

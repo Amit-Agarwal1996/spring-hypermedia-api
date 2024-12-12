@@ -80,7 +80,7 @@ public class NewBookControllerFindByIsbnFilteredTest {
 		BookRepository mockRepo = Mockito.mock(BookRepository.class);
 		Book mockBook = Mockito.mock(Book.class);
 		when(mockRepo.findByIsbn("validIsbn")).thenReturn(mockBook);
-		NewBookController controller = new NewBookController(mockRepo);
+		NewBookController controller = new NewBookController();
 		// Act
 		MappingJacksonValue result = controller.findByIsbnFiltered("title,author", "validIsbn");
 		// Assert
@@ -95,7 +95,7 @@ public class NewBookControllerFindByIsbnFilteredTest {
 		// Arrange
 		BookRepository mockRepo = Mockito.mock(BookRepository.class);
 		when(mockRepo.findByIsbn("invalidIsbn")).thenReturn(null);
-		NewBookController controller = new NewBookController(mockRepo);
+		NewBookController controller = new NewBookController();
 		// Act
 		controller.findByIsbnFiltered("title,author", "invalidIsbn");
 	}
@@ -107,7 +107,7 @@ public class NewBookControllerFindByIsbnFilteredTest {
 		BookRepository mockRepo = Mockito.mock(BookRepository.class);
 		Book mockBook = Mockito.mock(Book.class);
 		when(mockRepo.findByIsbn("validIsbn")).thenReturn(mockBook);
-		NewBookController controller = new NewBookController(mockRepo);
+		NewBookController controller = new NewBookController();
 		// Act
 		MappingJacksonValue result = controller.findByIsbnFiltered("invalidField1,invalidField2", "validIsbn");
 		// Assert

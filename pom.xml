@@ -71,26 +71,15 @@
       <version>0.0.40</version>
       <!--Dependency added by RoostGPT-->
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>5.3.30</version>
-      <scope>compile</scope>
-      <!--Dependency added by RoostGPT-->
-    </dependency>
+    
     <!-- utils -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.4</version>
     </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <!-- test -->
-    <dependency>
+
+<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>

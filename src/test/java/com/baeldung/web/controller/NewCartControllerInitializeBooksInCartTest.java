@@ -90,7 +90,7 @@ public class NewCartControllerInitializeBooksInCartTest {
 	public void testInitializeBooksInCartWhenBooksIsNotNull() {
 		List<Book> books = new ArrayList<>();
 		books.add(new Book());
-		newCartController.setBooks(books);
+		newCartController.addBookToCart(new BookResource(books.get(0)));
 		List<Book> result = newCartController.initializeBooksInCart();
 		assertEquals(books, result);
 	}

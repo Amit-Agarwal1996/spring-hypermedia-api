@@ -79,11 +79,10 @@ public class CartControllerClearYourCartTest {
 	@Test
 	@Category(Categories.valid.class)
 	public void testClearCartWhenFull() {
-		List<Book> books = new ArrayList<>();
-		books.add(new Book());
-		books.add(new Book());
-		Cart cart = new Cart(books, true);
-		CartResource cartResource = new CartResource(books, true);
+		Cart cart = new Cart();
+		cart.add(new Book());
+		cart.add(new Book());
+		CartResource cartResource = new CartResource(cart.getBooks(), true);
 		cartResource.setPurchased(true);
 		cartController.clearYourCart();
 		assertEquals(0, cart.getBooks().size());
@@ -93,9 +92,9 @@ public class CartControllerClearYourCartTest {
 	@Test
 	@Category(Categories.boundary.class)
 	public void testClearCartWhenEmpty() {
-		List<Book> books = new ArrayList<>();
-		Cart cart = new Cart(books, false);
-		CartResource cartResource = new CartResource(books, false);
+		Cart cart = new Cart();
+		cart.add(new Book());
+		CartResource cartResource = new CartResource(cart.getBooks(), false);
 		cartResource.setPurchased(false);
 		cartController.clearYourCart();
 		assertEquals(0, cart.getBooks().size());
@@ -105,10 +104,9 @@ public class CartControllerClearYourCartTest {
 	@Test
 	@Category(Categories.valid.class)
 	public void testClearCartWithSingleBook() {
-		List<Book> books = new ArrayList<>();
-		books.add(new Book());
-		Cart cart = new Cart(books, true);
-		CartResource cartResource = new CartResource(books, true);
+		Cart cart = new Cart();
+		cart.add(new Book());
+		CartResource cartResource = new CartResource(cart.getBooks(), true);
 		cartResource.setPurchased(true);
 		cartController.clearYourCart();
 		assertEquals(0, cart.getBooks().size());

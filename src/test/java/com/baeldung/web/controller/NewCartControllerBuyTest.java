@@ -122,7 +122,6 @@ public class NewCartControllerBuyTest {
 		List<Book> books = new ArrayList<>();
 		books.add(new Book());
 		controller.initializeBooksInCart().addAll(books);
-		controller. setPurchased(true);
 		CartResource theCart = new CartResource();
 		theCart.setPurchased(true);
 		NewCartResource cart = controller.buy(theCart);

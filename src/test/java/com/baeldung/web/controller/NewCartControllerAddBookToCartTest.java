@@ -115,7 +115,7 @@ public class NewCartControllerAddBookToCartTest {
 		book.setIsbn("12345");
 		BookResource bookResource = new BookResource(book);
 		when(bookRepo.findByIsbn(book.getIsbn())).thenReturn(book);
-		newCartController.books = null;
+		newCartController.addBookToCart(new BookResource(null));
 		NewCartResource newCartResource = newCartController.addBookToCart(bookResource);
 		assertTrue(newCartResource.getBooks().contains(book));
 	}
