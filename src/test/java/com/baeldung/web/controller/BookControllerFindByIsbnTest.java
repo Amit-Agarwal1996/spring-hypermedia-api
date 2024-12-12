@@ -48,7 +48,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import com.baeldung.model.Book;
-import com.baeldung.web.error.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import com.baeldung.web.resource.BookResource;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;

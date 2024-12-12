@@ -87,8 +87,8 @@ public class BookControllerFindAllSummaryTest {
 
 	@Before
 	public void setUp() {
-		book1 = new Book("123", "Book1", "Author1", "Publisher1", "Summary1");
-		book2 = new Book("456", "Book2", "Author2", "Publisher2", "Summary2");
+		book1 = new Book("Author1", "Publisher1", "Summary1");
+		book2 = new Book("Author2", "Publisher2", "Summary2");
 		bookList = Arrays.asList(book1, book2);
 	}
 
@@ -98,8 +98,8 @@ public class BookControllerFindAllSummaryTest {
         when(repo.findAll()).thenReturn(bookList);
         List<BookResource> result = bookController.findAllSummary();
         assertEquals(2, result.size());
-        assertEquals("123", result.get(0).getIsbn());
-        assertEquals("456", result.get(1).getIsbn());
+        assertEquals("123", result.get(0).getBook().getIsbn());
+        assertEquals("456", result.get(1).getBook().getIsbn());
     }
 
 	@Test

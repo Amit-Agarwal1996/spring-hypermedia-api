@@ -58,6 +58,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import com.baeldung.model.Book;
 import com.baeldung.persistence.BookRepository;
+import javax.persistence.EntityNotFoundException;
 import com.baeldung.web.error.Checks;
 import com.baeldung.web.resource.BookResource;
 import com.baeldung.web.resource.CartResource;

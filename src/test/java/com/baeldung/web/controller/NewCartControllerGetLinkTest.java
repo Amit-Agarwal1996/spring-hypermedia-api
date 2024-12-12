@@ -64,6 +64,8 @@ import com.baeldung.web.resource.CartResource;
 import com.baeldung.web.resource.NewCartResource;
 import jersey.repackaged.com.google.common.collect.Lists;
 import org.junit.experimental.categories.Category;
+import javax.persistence.EntityNotFoundException;
+
 
 @Category({ Categories.getLink.class })
 public class NewCartControllerGetLinkTest {
@@ -94,7 +96,7 @@ public class NewCartControllerGetLinkTest {
 		// Expect a NullPointerException to be thrown
 	}
 
-	@Test(expected = Checks.EntityNotFoundException.class)
+	@Test(expected = EntityNotFoundException.class)
 	@Category(Categories.invalid.class)
 	public void testGetLinkForBookWithNullIsbn() {
 		// Arrange

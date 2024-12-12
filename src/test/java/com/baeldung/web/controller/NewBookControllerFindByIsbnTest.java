@@ -64,7 +64,7 @@ import org.springframework.http.converter.json.MappingJacksonValue;
 import com.baeldung.model.Book;
 import com.baeldung.persistence.BookRepository;
 import com.baeldung.web.error.Checks;
-import com.baeldung.web.error.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import com.baeldung.web.resource.NewBookResource;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;

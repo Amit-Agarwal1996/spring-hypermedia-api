@@ -68,6 +68,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.baeldung.model.BookView;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.junit.experimental.categories.Category;
+import javax.persistence.EntityNotFoundException;
 
 @Category({ Categories.findByIsbnFiltered.class, Categories.findByIsbn.class, Categories.addNewBookToCart.class })
 public class NewBookControllerFindByIsbnFilteredTest {

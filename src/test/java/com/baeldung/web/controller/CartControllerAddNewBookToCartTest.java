@@ -49,7 +49,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.baeldung.model.Book;
 import com.baeldung.persistence.BookRepository;
-import com.baeldung.web.error.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import com.baeldung.web.resource.NewBookResource;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;

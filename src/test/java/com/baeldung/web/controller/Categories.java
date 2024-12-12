@@ -78,9 +78,7 @@ public interface Categories {
 
 	}
 
-	interface getIsbn {
-
-	}
+	
 
 	interface buy {
 

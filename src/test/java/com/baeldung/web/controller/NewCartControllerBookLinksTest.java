@@ -45,7 +45,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.springframework.hateoas.Link;
 import com.baeldung.model.Book;
-import com.baeldung.web.resource.Categories;
 import java.util.ArrayList;
 import java.util.List;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;

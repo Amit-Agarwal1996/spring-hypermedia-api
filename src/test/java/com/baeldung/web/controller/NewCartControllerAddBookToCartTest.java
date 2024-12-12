@@ -69,6 +69,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.baeldung.web.resource.CartResource;
 import jersey.repackaged.com.google.common.collect.Lists;
 import org.junit.experimental.categories.Category;
+import javax.persistence.EntityNotFoundException;
 
 @Category({ Categories.addBookToCart.class, Categories.findByIsbn.class, Categories.initializeBooksInCart.class })
 @RunWith(MockitoJUnitRunner.class)
