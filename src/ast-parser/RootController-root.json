@@ -1,0 +1,92 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/controller/RootController.java",
+  "packageName" : "com.baeldung.web.controller",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestMapping"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestMethod"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RestController"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "RootResource",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ ],
+      "fields" : [ ],
+      "constructors" : [ {
+        "name" : "RootResource",
+        "body" : "{\n    this.add(linkTo(BookController.class).withRel(\"books\"));\n    this.add(linkTo(CartController.class).withRel(\"cart\"));\n    // this.add(linkTo(methodOn(BookController.class).findAll()).withRel(\"books\"));\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ {
+          "name" : "add",
+          "arguments" : [ "linkTo(BookController.class).withRel(\"books\")" ]
+        }, {
+          "name" : "withRel",
+          "arguments" : [ "\"books\"" ]
+        }, {
+          "name" : "linkTo",
+          "arguments" : [ "BookController.class" ]
+        }, {
+          "name" : "add",
+          "arguments" : [ "linkTo(CartController.class).withRel(\"cart\")" ]
+        }, {
+          "name" : "withRel",
+          "arguments" : [ "\"cart\"" ]
+        }, {
+          "name" : "linkTo",
+          "arguments" : [ "CartController.class" ]
+        } ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public RootResource() {\n    this.add(linkTo(BookController.class).withRel(\"books\"));\n    this.add(linkTo(CartController.class).withRel(\"cart\"));\n    // this.add(linkTo(methodOn(BookController.class).findAll()).withRel(\"books\"));\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.hateoas.ResourceSupport"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.controller.BookController"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.controller.CartController"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/resource/RootResource.java",
+    "name" : "com.baeldung.web.resource.RootResource"
+  } ],
+  "entities" : [ {
+    "name" : "RootController",
+    "description" : null,
+    "annotations" : [ "RestController" ],
+    "methods" : [ {
+      "name" : "root",
+      "body" : "{\n    return new RootResource();\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "RequestMethod" ],
+      "annotations" : [ "RequestMapping" ],
+      "returnType" : "RootResource",
+      "description" : null,
+      "methodDefinition" : "@RequestMapping(value = \"\", method = RequestMethod.GET)\npublic RootResource root() {\n    return new RootResource();\n}"
+    } ],
+    "fields" : [ ],
+    "constructors" : [ ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

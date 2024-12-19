@@ -1,0 +1,117 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Book.java",
+  "packageName" : "com.baeldung.model",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Column"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Entity"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.GeneratedValue"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Id"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.annotation.JsonIgnore"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.annotation.JsonView"
+  } ],
+  "entities" : [ {
+    "name" : "Book",
+    "description" : null,
+    "annotations" : [ "Entity" ],
+    "methods" : [ {
+      "name" : "equals",
+      "body" : "{\n    if (this == obj)\n        return true;\n    if (obj == null)\n        return false;\n    if (getClass() != obj.getClass())\n        return false;\n    Book other = (Book) obj;\n    if (author == null) {\n        if (other.author != null)\n            return false;\n    } else if (!author.equals(other.author))\n        return false;\n    if (isbn == null) {\n        if (other.isbn != null)\n            return false;\n    } else if (!isbn.equals(other.isbn))\n        return false;\n    if (title == null) {\n        if (other.title != null)\n            return false;\n    } else if (!title.equals(other.title))\n        return false;\n    return true;\n}",
+      "arguments" : [ "Object obj" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "getClass",
+        "arguments" : [ ]
+      }, {
+        "name" : "getClass",
+        "arguments" : [ ]
+      }, {
+        "name" : "equals",
+        "arguments" : [ "other.author" ]
+      }, {
+        "name" : "equals",
+        "arguments" : [ "other.isbn" ]
+      }, {
+        "name" : "equals",
+        "arguments" : [ "other.title" ]
+      } ],
+      "usedEntities" : [ "obj", "author", "other", "isbn", "title" ],
+      "annotations" : [ "Override" ],
+      "returnType" : "boolean",
+      "description" : null,
+      "methodDefinition" : "@Override\npublic boolean equals(Object obj) {\n    if (this == obj)\n        return true;\n    if (obj == null)\n        return false;\n    if (getClass() != obj.getClass())\n        return false;\n    Book other = (Book) obj;\n    if (author == null) {\n        if (other.author != null)\n            return false;\n    } else if (!author.equals(other.author))\n        return false;\n    if (isbn == null) {\n        if (other.isbn != null)\n            return false;\n    } else if (!isbn.equals(other.isbn))\n        return false;\n    if (title == null) {\n        if (other.title != null)\n            return false;\n    } else if (!title.equals(other.title))\n        return false;\n    return true;\n}"
+    } ],
+    "fields" : [ {
+      "name" : "id",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "Long",
+      "description" : null
+    }, {
+      "name" : "isbn",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "author",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "title",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "synopsis",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "language",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    } ],
+    "constructors" : [ {
+      "name" : "Book",
+      "body" : "{\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public Book() {\n}"
+    }, {
+      "name" : "Book",
+      "body" : "{\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}",
+      "arguments" : [ "final String author", "final String title", "final String isbn" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "author", "title", "isbn" ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public Book(final String author, final String title, final String isbn) {\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

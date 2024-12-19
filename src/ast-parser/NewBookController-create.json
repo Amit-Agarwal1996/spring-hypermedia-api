@@ -1,0 +1,358 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/controller/NewBookController.java",
+  "packageName" : "com.baeldung.web.controller",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "java.util.List"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "java.util.stream.Collectors"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.beans.factory.annotation.Autowired"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.http.converter.json.MappingJacksonValue"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.PathVariable"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestBody"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestMapping"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestMethod"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RequestParam"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.RestController"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "Book",
+      "description" : null,
+      "annotations" : [ "Entity" ],
+      "methods" : [ ],
+      "fields" : [ {
+        "name" : "id",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "Long",
+        "description" : null
+      }, {
+        "name" : "isbn",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "author",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "title",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "synopsis",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "language",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      } ],
+      "constructors" : [ {
+        "name" : "Book",
+        "body" : "{\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book() {\n}"
+      }, {
+        "name" : "Book",
+        "body" : "{\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}",
+        "arguments" : [ "final String author", "final String title", "final String isbn" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "author", "title", "isbn" ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book(final String author, final String title, final String isbn) {\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Column"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Entity"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.GeneratedValue"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Id"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonIgnore"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonView"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Book.java",
+    "name" : "com.baeldung.model.Book"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "BookView",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ ],
+      "fields" : [ ],
+      "constructors" : [ ],
+      "extends" : null,
+      "childEntity" : [ "Summary" ],
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ ]
+    }, {
+      "name" : "Summary",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ ],
+      "fields" : [ ],
+      "constructors" : [ ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/BookView.java",
+    "name" : "com.baeldung.model.BookView"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "BookRepository",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ {
+        "name" : "findByIsbn",
+        "body" : "{\n}",
+        "arguments" : [ "final String isbn" ],
+        "accessModifier" : "",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "returnType" : "Book",
+        "description" : null,
+        "methodDefinition" : "Book findByIsbn(final String isbn);"
+      } ],
+      "fields" : [ ],
+      "constructors" : [ ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.data.repository.CrudRepository"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.model.Book"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/persistence/BookRepository.java",
+    "name" : "com.baeldung.persistence.BookRepository"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "Checks",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ {
+        "name" : "checkEntityExists",
+        "body" : "{\n    if (entity == null) {\n        throw new EntityNotFoundException(message);\n    }\n    return entity;\n}",
+        "arguments" : [ "T entity", "final String message" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "entity", "message" ],
+        "annotations" : [ ],
+        "returnType" : "T",
+        "description" : null,
+        "methodDefinition" : "// \npublic static final <T> T checkEntityExists(T entity, final String message) {\n    if (entity == null) {\n        throw new EntityNotFoundException(message);\n    }\n    return entity;\n}"
+      } ],
+      "fields" : [ ],
+      "constructors" : [ {
+        "name" : "Checks",
+        "body" : "{\n    super();\n}",
+        "arguments" : [ ],
+        "accessModifier" : "private",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "private Checks() {\n    super();\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.EntityNotFoundException"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/error/Checks.java",
+    "name" : "com.baeldung.web.error.Checks"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "NewBookResource",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ {
+        "name" : "getBook",
+        "body" : "{\n    return book;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "book" ],
+        "annotations" : [ "JsonFilter" ],
+        "returnType" : "Book",
+        "description" : null,
+        "methodDefinition" : "// \n@JsonFilter(\"bookFilter\")\npublic Book getBook() {\n    return book;\n}"
+      } ],
+      "fields" : [ {
+        "name" : "book",
+        "accessModifier" : "private final",
+        "value" : null,
+        "type" : "Book",
+        "description" : null
+      } ],
+      "constructors" : [ {
+        "name" : "NewBookResource",
+        "body" : "{\n    this.book = book;\n    // this.add(BasicLinkBuilder.linkToCurrentMapping().slash(\"/books\").slash(book.getIsbn()).withSelfRel());\n    // this.add(linkTo(methodOn(BookController.class, book).findByIsbn(book.getIsbn())).withSelfRel());\n    this.add(linkTo(BookController.class).slash(book.getIsbn()).withSelfRel());\n}",
+        "arguments" : [ "@NotNull final Book book" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ {
+          "name" : "add",
+          "arguments" : [ "linkTo(BookController.class).slash(book.getIsbn()).withSelfRel()" ]
+        }, {
+          "name" : "withSelfRel",
+          "arguments" : [ ]
+        }, {
+          "name" : "slash",
+          "arguments" : [ "book.getIsbn()" ]
+        }, {
+          "name" : "linkTo",
+          "arguments" : [ "BookController.class" ]
+        }, {
+          "name" : "getIsbn",
+          "arguments" : [ ]
+        } ],
+        "usedEntities" : [ "book" ],
+        "annotations" : [ "JsonCreator" ],
+        "description" : null,
+        "methodDefinition" : "@JsonCreator\npublic NewBookResource(@NotNull final Book book) {\n    this.book = book;\n    // this.add(BasicLinkBuilder.linkToCurrentMapping().slash(\"/books\").slash(book.getIsbn()).withSelfRel());\n    // this.add(linkTo(methodOn(BookController.class, book).findByIsbn(book.getIsbn())).withSelfRel());\n    this.add(linkTo(BookController.class).slash(book.getIsbn()).withSelfRel());\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.validation.constraints.NotNull"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.hateoas.ResourceSupport"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.model.Book"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.model.BookView"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.controller.BookController"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonCreator"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonFilter"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonView"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/resource/NewBookResource.java",
+    "name" : "com.baeldung.web.resource.NewBookResource"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.annotation.JsonView"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.databind.ser.FilterProvider"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider"
+  } ],
+  "entities" : [ {
+    "name" : "NewBookController",
+    "description" : null,
+    "annotations" : [ "RestController", "RequestMapping" ],
+    "methods" : [ {
+      "name" : "create",
+      "body" : "{\n    repo.save(newBook.getBook());\n}",
+      "arguments" : [ "@RequestBody NewBookResource newBook" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "save",
+        "arguments" : [ "newBook.getBook()" ]
+      }, {
+        "name" : "getBook",
+        "arguments" : [ ]
+      } ],
+      "usedEntities" : [ "RequestMethod", "repo", "newBook" ],
+      "annotations" : [ "RequestMapping" ],
+      "returnType" : "void",
+      "description" : null,
+      "methodDefinition" : "// write\n@RequestMapping(method = RequestMethod.POST)\npublic void create(@RequestBody NewBookResource newBook) {\n    repo.save(newBook.getBook());\n}"
+    } ],
+    "fields" : [ {
+      "name" : "repo",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "BookRepository",
+      "description" : null
+    } ],
+    "constructors" : [ ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

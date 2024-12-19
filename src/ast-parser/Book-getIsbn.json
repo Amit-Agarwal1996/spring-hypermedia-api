@@ -1,0 +1,102 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Book.java",
+  "packageName" : "com.baeldung.model",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Column"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Entity"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.GeneratedValue"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.Id"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.annotation.JsonIgnore"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "com.fasterxml.jackson.annotation.JsonView"
+  } ],
+  "entities" : [ {
+    "name" : "Book",
+    "description" : null,
+    "annotations" : [ "Entity" ],
+    "methods" : [ {
+      "name" : "getIsbn",
+      "body" : "{\n    return isbn;\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "isbn" ],
+      "annotations" : [ ],
+      "returnType" : "String",
+      "description" : null,
+      "methodDefinition" : "public String getIsbn() {\n    return isbn;\n}"
+    } ],
+    "fields" : [ {
+      "name" : "id",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "Long",
+      "description" : null
+    }, {
+      "name" : "isbn",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "author",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "title",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "synopsis",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    }, {
+      "name" : "language",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "String",
+      "description" : null
+    } ],
+    "constructors" : [ {
+      "name" : "Book",
+      "body" : "{\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public Book() {\n}"
+    }, {
+      "name" : "Book",
+      "body" : "{\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}",
+      "arguments" : [ "final String author", "final String title", "final String isbn" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "author", "title", "isbn" ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public Book(final String author, final String title, final String isbn) {\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

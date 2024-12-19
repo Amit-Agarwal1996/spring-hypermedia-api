@@ -1,0 +1,37 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/SpringHypermediaApiApplication.java",
+  "packageName" : "com.baeldung",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.boot.SpringApplication"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.boot.autoconfigure.SpringBootApplication"
+  } ],
+  "entities" : [ {
+    "name" : "SpringHypermediaApiApplication",
+    "description" : null,
+    "annotations" : [ "SpringBootApplication" ],
+    "methods" : [ {
+      "name" : "main",
+      "body" : "{\n    SpringApplication.run(SpringHypermediaApiApplication.class, args);\n}",
+      "arguments" : [ "String[] args" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "run",
+        "arguments" : [ "SpringHypermediaApiApplication.class", "args" ]
+      } ],
+      "usedEntities" : [ "SpringApplication", "args" ],
+      "annotations" : [ ],
+      "returnType" : "void",
+      "description" : null,
+      "methodDefinition" : "// \npublic static void main(String[] args) {\n    SpringApplication.run(SpringHypermediaApiApplication.class, args);\n}"
+    } ],
+    "fields" : [ ],
+    "constructors" : [ ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

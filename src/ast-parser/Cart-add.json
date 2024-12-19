@@ -1,0 +1,325 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Cart.java",
+  "packageName" : "com.baeldung.model",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "java.util.ArrayList"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "java.util.List"
+  } ],
+  "entities" : [ {
+    "name" : "Cart",
+    "description" : null,
+    "annotations" : [ ],
+    "methods" : [ {
+      "name" : "add",
+      "body" : "{\n    books.add(bookToAdd);\n}",
+      "arguments" : [ "final Book bookToAdd" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "add",
+        "arguments" : [ "bookToAdd" ]
+      } ],
+      "usedEntities" : [ "books", "bookToAdd" ],
+      "annotations" : [ ],
+      "returnType" : "void",
+      "description" : null,
+      "methodDefinition" : "// \npublic final void add(final Book bookToAdd) {\n    books.add(bookToAdd);\n}"
+    } ],
+    "fields" : [ {
+      "name" : "books",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "List<Book>",
+      "description" : null
+    }, {
+      "name" : "purchased",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "boolean",
+      "description" : null
+    } ],
+    "constructors" : [ {
+      "name" : "Cart",
+      "body" : "{\n    this.books = new ArrayList<Book>();\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public Cart() {\n    this.books = new ArrayList<Book>();\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ {
+    "imports" : [ {
+      "dereferencedParts" : [ ],
+      "name" : "javax.persistence.Column"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "javax.persistence.Entity"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "javax.persistence.GeneratedValue"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "javax.persistence.Id"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "com.fasterxml.jackson.annotation.JsonIgnore"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "com.fasterxml.jackson.annotation.JsonView"
+    } ],
+    "entities" : [ {
+      "name" : "Book",
+      "description" : null,
+      "annotations" : [ "Entity" ],
+      "methods" : [ {
+        "name" : "getId",
+        "body" : "{\n    return id;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "id" ],
+        "annotations" : [ ],
+        "returnType" : "Long",
+        "description" : null,
+        "methodDefinition" : "// \npublic Long getId() {\n    return id;\n}"
+      }, {
+        "name" : "setId",
+        "body" : "{\n    this.id = id;\n}",
+        "arguments" : [ "Long id" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "id" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setId(Long id) {\n    this.id = id;\n}"
+      }, {
+        "name" : "getTitle",
+        "body" : "{\n    return title;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "title" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getTitle() {\n    return title;\n}"
+      }, {
+        "name" : "setTitle",
+        "body" : "{\n    this.title = title;\n}",
+        "arguments" : [ "String title" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "title" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setTitle(String title) {\n    this.title = title;\n}"
+      }, {
+        "name" : "getIsbn",
+        "body" : "{\n    return isbn;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "isbn" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getIsbn() {\n    return isbn;\n}"
+      }, {
+        "name" : "setIsbn",
+        "body" : "{\n    this.isbn = isbn;\n}",
+        "arguments" : [ "String isbn" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "isbn" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setIsbn(String isbn) {\n    this.isbn = isbn;\n}"
+      }, {
+        "name" : "getAuthor",
+        "body" : "{\n    return author;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "author" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getAuthor() {\n    return author;\n}"
+      }, {
+        "name" : "setAuthor",
+        "body" : "{\n    this.author = author;\n}",
+        "arguments" : [ "String author" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "author" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setAuthor(String author) {\n    this.author = author;\n}"
+      }, {
+        "name" : "getSynopsis",
+        "body" : "{\n    return synopsis;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "synopsis" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getSynopsis() {\n    return synopsis;\n}"
+      }, {
+        "name" : "setSynopsis",
+        "body" : "{\n    this.synopsis = synopsis;\n}",
+        "arguments" : [ "String synopsis" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "synopsis" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setSynopsis(String synopsis) {\n    this.synopsis = synopsis;\n}"
+      }, {
+        "name" : "getLanguage",
+        "body" : "{\n    return language;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "language" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getLanguage() {\n    return language;\n}"
+      }, {
+        "name" : "setLanguage",
+        "body" : "{\n    this.language = language;\n}",
+        "arguments" : [ "String language" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "language" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setLanguage(String language) {\n    this.language = language;\n}"
+      }, {
+        "name" : "hashCode",
+        "body" : "{\n    final int prime = 31;\n    int result = 1;\n    result = prime * result + ((author == null) ? 0 : author.hashCode());\n    result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());\n    result = prime * result + ((title == null) ? 0 : title.hashCode());\n    return result;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ {
+          "name" : "hashCode",
+          "arguments" : [ ]
+        }, {
+          "name" : "hashCode",
+          "arguments" : [ ]
+        }, {
+          "name" : "hashCode",
+          "arguments" : [ ]
+        } ],
+        "usedEntities" : [ "result", "prime", "author", "isbn", "title" ],
+        "annotations" : [ "Override" ],
+        "returnType" : "int",
+        "description" : null,
+        "methodDefinition" : "// \n@Override\npublic int hashCode() {\n    final int prime = 31;\n    int result = 1;\n    result = prime * result + ((author == null) ? 0 : author.hashCode());\n    result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());\n    result = prime * result + ((title == null) ? 0 : title.hashCode());\n    return result;\n}"
+      }, {
+        "name" : "equals",
+        "body" : "{\n    if (this == obj)\n        return true;\n    if (obj == null)\n        return false;\n    if (getClass() != obj.getClass())\n        return false;\n    Book other = (Book) obj;\n    if (author == null) {\n        if (other.author != null)\n            return false;\n    } else if (!author.equals(other.author))\n        return false;\n    if (isbn == null) {\n        if (other.isbn != null)\n            return false;\n    } else if (!isbn.equals(other.isbn))\n        return false;\n    if (title == null) {\n        if (other.title != null)\n            return false;\n    } else if (!title.equals(other.title))\n        return false;\n    return true;\n}",
+        "arguments" : [ "Object obj" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ {
+          "name" : "getClass",
+          "arguments" : [ ]
+        }, {
+          "name" : "getClass",
+          "arguments" : [ ]
+        }, {
+          "name" : "equals",
+          "arguments" : [ "other.author" ]
+        }, {
+          "name" : "equals",
+          "arguments" : [ "other.isbn" ]
+        }, {
+          "name" : "equals",
+          "arguments" : [ "other.title" ]
+        } ],
+        "usedEntities" : [ "obj", "author", "other", "isbn", "title" ],
+        "annotations" : [ "Override" ],
+        "returnType" : "boolean",
+        "description" : null,
+        "methodDefinition" : "@Override\npublic boolean equals(Object obj) {\n    if (this == obj)\n        return true;\n    if (obj == null)\n        return false;\n    if (getClass() != obj.getClass())\n        return false;\n    Book other = (Book) obj;\n    if (author == null) {\n        if (other.author != null)\n            return false;\n    } else if (!author.equals(other.author))\n        return false;\n    if (isbn == null) {\n        if (other.isbn != null)\n            return false;\n    } else if (!isbn.equals(other.isbn))\n        return false;\n    if (title == null) {\n        if (other.title != null)\n            return false;\n    } else if (!title.equals(other.title))\n        return false;\n    return true;\n}"
+      } ],
+      "fields" : [ {
+        "name" : "id",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "Long",
+        "description" : null
+      }, {
+        "name" : "isbn",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "author",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "title",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "synopsis",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "language",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      } ],
+      "constructors" : [ {
+        "name" : "Book",
+        "body" : "{\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book() {\n}"
+      }, {
+        "name" : "Book",
+        "body" : "{\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}",
+        "arguments" : [ "final String author", "final String title", "final String isbn" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "author", "title", "isbn" ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book(final String author, final String title, final String isbn) {\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC"
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Book.java"
+  } ]
+} ]

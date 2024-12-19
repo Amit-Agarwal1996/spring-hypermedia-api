@@ -1,0 +1,41 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/error/Checks.java",
+  "packageName" : "com.baeldung.web.error",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.EntityNotFoundException"
+  } ],
+  "entities" : [ {
+    "name" : "Checks",
+    "description" : null,
+    "annotations" : [ ],
+    "methods" : [ {
+      "name" : "checkEntityExists",
+      "body" : "{\n    if (entity == null) {\n        throw new EntityNotFoundException(message);\n    }\n    return entity;\n}",
+      "arguments" : [ "T entity", "final String message" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "entity", "message" ],
+      "annotations" : [ ],
+      "returnType" : "T",
+      "description" : null,
+      "methodDefinition" : "// \npublic static final <T> T checkEntityExists(T entity, final String message) {\n    if (entity == null) {\n        throw new EntityNotFoundException(message);\n    }\n    return entity;\n}"
+    } ],
+    "fields" : [ ],
+    "constructors" : [ {
+      "name" : "Checks",
+      "body" : "{\n    super();\n}",
+      "arguments" : [ ],
+      "accessModifier" : "private",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "private Checks() {\n    super();\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]

@@ -1,0 +1,195 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/error/GlobalExceptionHandlerController.java",
+  "packageName" : "com.baeldung.web.error",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "javax.persistence.EntityNotFoundException"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.http.HttpHeaders"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.http.HttpStatus"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.http.ResponseEntity"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.ControllerAdvice"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.bind.annotation.ExceptionHandler"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler"
+  } ],
+  "entities" : [ {
+    "name" : "GlobalExceptionHandlerController",
+    "description" : null,
+    "annotations" : [ "ControllerAdvice" ],
+    "methods" : [ {
+      "name" : "handleEntityNotFoundException",
+      "body" : "{\n    final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, ex.getLocalizedMessage(), \"test\");\n    return new ResponseEntity<ApiError>(apiError, new HttpHeaders(), apiError.getStatus());\n}",
+      "arguments" : [ "EntityNotFoundException ex" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "getLocalizedMessage",
+        "arguments" : [ ]
+      }, {
+        "name" : "getStatus",
+        "arguments" : [ ]
+      } ],
+      "usedEntities" : [ "HttpStatus", "ex", "apiError" ],
+      "annotations" : [ "ExceptionHandler" ],
+      "returnType" : "ResponseEntity<ApiError>",
+      "description" : null,
+      "methodDefinition" : "// \n@ExceptionHandler({ EntityNotFoundException.class })\npublic ResponseEntity<ApiError> handleEntityNotFoundException(EntityNotFoundException ex) {\n    final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, ex.getLocalizedMessage(), \"test\");\n    return new ResponseEntity<ApiError>(apiError, new HttpHeaders(), apiError.getStatus());\n}"
+    } ],
+    "fields" : [ ],
+    "constructors" : [ {
+      "name" : "GlobalExceptionHandlerController",
+      "body" : "{\n    super();\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public GlobalExceptionHandlerController() {\n    super();\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ {
+    "imports" : [ {
+      "dereferencedParts" : [ ],
+      "name" : "java.util.Arrays"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "java.util.List"
+    }, {
+      "dereferencedParts" : [ ],
+      "name" : "org.springframework.http.HttpStatus"
+    } ],
+    "entities" : [ {
+      "name" : "ApiError",
+      "description" : null,
+      "annotations" : [ ],
+      "methods" : [ {
+        "name" : "getStatus",
+        "body" : "{\n    return status;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "status" ],
+        "annotations" : [ ],
+        "returnType" : "HttpStatus",
+        "description" : null,
+        "methodDefinition" : "// \npublic HttpStatus getStatus() {\n    return status;\n}"
+      }, {
+        "name" : "setStatus",
+        "body" : "{\n    this.status = status;\n}",
+        "arguments" : [ "HttpStatus status" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "status" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setStatus(HttpStatus status) {\n    this.status = status;\n}"
+      }, {
+        "name" : "getMessage",
+        "body" : "{\n    return message;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "message" ],
+        "annotations" : [ ],
+        "returnType" : "String",
+        "description" : null,
+        "methodDefinition" : "public String getMessage() {\n    return message;\n}"
+      }, {
+        "name" : "setMessage",
+        "body" : "{\n    this.message = message;\n}",
+        "arguments" : [ "String message" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "message" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setMessage(String message) {\n    this.message = message;\n}"
+      }, {
+        "name" : "getErrors",
+        "body" : "{\n    return errors;\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "errors" ],
+        "annotations" : [ ],
+        "returnType" : "List<String>",
+        "description" : null,
+        "methodDefinition" : "public List<String> getErrors() {\n    return errors;\n}"
+      }, {
+        "name" : "setErrors",
+        "body" : "{\n    this.errors = errors;\n}",
+        "arguments" : [ "List<String> errors" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "errors" ],
+        "annotations" : [ ],
+        "returnType" : "void",
+        "description" : null,
+        "methodDefinition" : "public void setErrors(List<String> errors) {\n    this.errors = errors;\n}"
+      } ],
+      "fields" : [ {
+        "name" : "status",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "HttpStatus",
+        "description" : null
+      }, {
+        "name" : "message",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "errors",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "List<String>",
+        "description" : null
+      } ],
+      "constructors" : [ {
+        "name" : "ApiError",
+        "body" : "{\n    super();\n    this.status = status;\n    this.message = message;\n    this.errors = errors;\n}",
+        "arguments" : [ "HttpStatus status", "String message", "List<String> errors" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "status", "message", "errors" ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public ApiError(HttpStatus status, String message, List<String> errors) {\n    super();\n    this.status = status;\n    this.message = message;\n    this.errors = errors;\n}"
+      }, {
+        "name" : "ApiError",
+        "body" : "{\n    super();\n    this.status = status;\n    this.message = message;\n    errors = Arrays.asList(error);\n}",
+        "arguments" : [ "HttpStatus status", "String message", "String error" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ {
+          "name" : "asList",
+          "arguments" : [ "error" ]
+        } ],
+        "usedEntities" : [ "status", "message", "errors", "Arrays", "error" ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public ApiError(HttpStatus status, String message, String error) {\n    super();\n    this.status = status;\n    this.message = message;\n    errors = Arrays.asList(error);\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC"
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/error/ApiError.java"
+  } ]
+} ]

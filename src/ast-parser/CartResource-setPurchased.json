@@ -1,0 +1,287 @@
+[ {
+  "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/resource/CartResource.java",
+  "packageName" : "com.baeldung.web.resource",
+  "imports" : [ {
+    "dereferencedParts" : [ ],
+    "name" : "org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.mvc.BasicLinkBuilder.linkToCurrentMapping"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "java.util.List"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.Link"
+  }, {
+    "dereferencedParts" : [ ],
+    "name" : "org.springframework.hateoas.ResourceSupport"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "Book",
+      "description" : null,
+      "annotations" : [ "Entity" ],
+      "methods" : [ ],
+      "fields" : [ {
+        "name" : "id",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "Long",
+        "description" : null
+      }, {
+        "name" : "isbn",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "author",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "title",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "synopsis",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "language",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "String",
+        "description" : null
+      } ],
+      "constructors" : [ {
+        "name" : "Book",
+        "body" : "{\n}",
+        "arguments" : [ ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book() {\n}"
+      }, {
+        "name" : "Book",
+        "body" : "{\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}",
+        "arguments" : [ "final String author", "final String title", "final String isbn" ],
+        "accessModifier" : "public",
+        "methodsCalled" : [ ],
+        "usedEntities" : [ "author", "title", "isbn" ],
+        "annotations" : [ ],
+        "description" : null,
+        "methodDefinition" : "public Book(final String author, final String title, final String isbn) {\n    this.author = author;\n    this.title = title;\n    this.isbn = isbn;\n}"
+      } ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Column"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Entity"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.GeneratedValue"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "javax.persistence.Id"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonIgnore"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.fasterxml.jackson.annotation.JsonView"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/model/Book.java",
+    "name" : "com.baeldung.model.Book"
+  }, {
+    "dereferencedParts" : [ {
+      "name" : "CartController",
+      "description" : null,
+      "annotations" : [ "RestController", "RequestMapping" ],
+      "methods" : [ ],
+      "fields" : [ {
+        "name" : "cart",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "Cart",
+        "description" : null
+      }, {
+        "name" : "bookRepo",
+        "accessModifier" : "private",
+        "value" : null,
+        "type" : "BookRepository",
+        "description" : null
+      } ],
+      "constructors" : [ ],
+      "extends" : null,
+      "childEntity" : null,
+      "accessSpecifier" : "PUBLIC",
+      "imports" : [ {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.beans.factory.InitializingBean"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.beans.factory.annotation.Autowired"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.web.bind.annotation.RequestBody"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.web.bind.annotation.RequestMapping"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.web.bind.annotation.RequestMethod"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "org.springframework.web.bind.annotation.RestController"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.model.Book"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.model.Cart"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.persistence.BookRepository"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.error.Checks"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.resource.BookResource"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.resource.CartResource"
+      }, {
+        "dereferencedParts" : [ ],
+        "name" : "com.baeldung.web.resource.NewBookResource"
+      } ]
+    } ],
+    "filePath" : "/home/info/spring-hypermedia-api/src/main/java/com/baeldung/web/controller/CartController.java",
+    "name" : "com.baeldung.web.controller.CartController"
+  } ],
+  "entities" : [ {
+    "name" : "CartResource",
+    "description" : null,
+    "annotations" : [ ],
+    "methods" : [ {
+      "name" : "setPurchased",
+      "body" : "{\n    this.purchased = purchased;\n}",
+      "arguments" : [ "boolean purchased" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ "purchased" ],
+      "annotations" : [ ],
+      "returnType" : "void",
+      "description" : null,
+      "methodDefinition" : "public void setPurchased(boolean purchased) {\n    this.purchased = purchased;\n}"
+    } ],
+    "fields" : [ {
+      "name" : "books",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "List<Book>",
+      "description" : null
+    }, {
+      "name" : "purchased",
+      "accessModifier" : "private",
+      "value" : null,
+      "type" : "boolean",
+      "description" : null
+    } ],
+    "constructors" : [ {
+      "name" : "CartResource",
+      "body" : "{\n    super();\n}",
+      "arguments" : [ ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ ],
+      "usedEntities" : [ ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public CartResource() {\n    super();\n}"
+    }, {
+      "name" : "CartResource",
+      "body" : "{\n    super();\n    this.books = books;\n    this.purchased = purchased;\n    this.add(linkTo(methodOn(CartController.class).seeYourCart()).withSelfRel());\n    if (!purchased && !this.books.isEmpty()) {\n        Link clearLink = null;\n        try {\n            clearLink = linkTo(CartController.class, CartController.class.getMethod(\"clearYourCart\")).withRel(\"clear\");\n        } catch (NoSuchMethodException | SecurityException e) {\n            e.printStackTrace();\n        }\n        this.add(clearLink);\n    }\n    if (purchased) {\n        this.add(linkToCurrentMapping().slash(\"/receipt\").slash(randomAlphanumeric(6)).withRel(\"receipt\"));\n    }\n}",
+      "arguments" : [ "final List<Book> books", "final boolean purchased" ],
+      "accessModifier" : "public",
+      "methodsCalled" : [ {
+        "name" : "add",
+        "arguments" : [ "linkTo(methodOn(CartController.class).seeYourCart()).withSelfRel()" ]
+      }, {
+        "name" : "withSelfRel",
+        "arguments" : [ ]
+      }, {
+        "name" : "linkTo",
+        "arguments" : [ "methodOn(CartController.class).seeYourCart()" ]
+      }, {
+        "name" : "seeYourCart",
+        "arguments" : [ ]
+      }, {
+        "name" : "methodOn",
+        "arguments" : [ "CartController.class" ]
+      }, {
+        "name" : "isEmpty",
+        "arguments" : [ ]
+      }, {
+        "name" : "withRel",
+        "arguments" : [ "\"clear\"" ]
+      }, {
+        "name" : "linkTo",
+        "arguments" : [ "CartController.class", "CartController.class.getMethod(\"clearYourCart\")" ]
+      }, {
+        "name" : "getMethod",
+        "arguments" : [ "\"clearYourCart\"" ]
+      }, {
+        "name" : "printStackTrace",
+        "arguments" : [ ]
+      }, {
+        "name" : "add",
+        "arguments" : [ "clearLink" ]
+      }, {
+        "name" : "add",
+        "arguments" : [ "linkToCurrentMapping().slash(\"/receipt\").slash(randomAlphanumeric(6)).withRel(\"receipt\")" ]
+      }, {
+        "name" : "withRel",
+        "arguments" : [ "\"receipt\"" ]
+      }, {
+        "name" : "slash",
+        "arguments" : [ "randomAlphanumeric(6)" ]
+      }, {
+        "name" : "slash",
+        "arguments" : [ "\"/receipt\"" ]
+      }, {
+        "name" : "linkToCurrentMapping",
+        "arguments" : [ ]
+      }, {
+        "name" : "randomAlphanumeric",
+        "arguments" : [ "6" ]
+      } ],
+      "usedEntities" : [ "books", "purchased", "clearLink", "e" ],
+      "annotations" : [ ],
+      "description" : null,
+      "methodDefinition" : "public CartResource(final List<Book> books, final boolean purchased) {\n    super();\n    this.books = books;\n    this.purchased = purchased;\n    this.add(linkTo(methodOn(CartController.class).seeYourCart()).withSelfRel());\n    if (!purchased && !this.books.isEmpty()) {\n        Link clearLink = null;\n        try {\n            clearLink = linkTo(CartController.class, CartController.class.getMethod(\"clearYourCart\")).withRel(\"clear\");\n        } catch (NoSuchMethodException | SecurityException e) {\n            e.printStackTrace();\n        }\n        this.add(clearLink);\n    }\n    if (purchased) {\n        this.add(linkToCurrentMapping().slash(\"/receipt\").slash(randomAlphanumeric(6)).withRel(\"receipt\"));\n    }\n}"
+    } ],
+    "extends" : null,
+    "childEntity" : null,
+    "accessSpecifier" : "PUBLIC"
+  } ],
+  "samePackageClasses" : [ ]
+} ]
