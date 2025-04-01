@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NewBookResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-hypermedia-api</a> &gt; <a href="index.source.html" class="el_package">com.baeldung.web.resource</a> &gt; <span class="el_source">NewBookResource.java</span></div><h1>NewBookResource.java</h1><pre class="source lang-java linenums">package com.baeldung.web.resource;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.hateoas.ResourceSupport;
+
+import com.baeldung.model.Book;
+import com.baeldung.model.BookView;
+import com.baeldung.web.controller.BookController;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonView;
+
+public class NewBookResource extends ResourceSupport {
+
+    @JsonView(BookView.Summary.class)
+    private final Book book;
+
+    @JsonCreator
+<span class="nc" id="L22">    public NewBookResource(@NotNull final Book book) {</span>
+<span class="nc" id="L23">        this.book = book;</span>
+
+        // this.add(BasicLinkBuilder.linkToCurrentMapping().slash(&quot;/books&quot;).slash(book.getIsbn()).withSelfRel());
+        // this.add(linkTo(methodOn(BookController.class, book).findByIsbn(book.getIsbn())).withSelfRel());
+<span class="nc" id="L27">        this.add(linkTo(BookController.class).slash(book.getIsbn()).withSelfRel());</span>
+<span class="nc" id="L28">    }</span>
+
+    //
+
+    @JsonFilter(&quot;bookFilter&quot;)
+    public Book getBook() {
+<span class="nc" id="L34">        return book;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L39">        return &quot;BookResource [book=&quot; + book + &quot;, toString()=&quot; + super.toString() + &quot;]&quot;;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

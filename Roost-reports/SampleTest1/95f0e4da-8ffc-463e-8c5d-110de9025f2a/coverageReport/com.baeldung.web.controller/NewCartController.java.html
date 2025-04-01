@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NewCartController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-hypermedia-api</a> &gt; <a href="index.source.html" class="el_package">com.baeldung.web.controller</a> &gt; <span class="el_source">NewCartController.java</span></div><h1>NewCartController.java</h1><pre class="source lang-java linenums">package com.baeldung.web.controller;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Link;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.baeldung.model.Book;
+import com.baeldung.persistence.BookRepository;
+import com.baeldung.web.error.Checks;
+import com.baeldung.web.resource.BookResource;
+import com.baeldung.web.resource.CartResource;
+import com.baeldung.web.resource.NewCartResource;
+
+import jersey.repackaged.com.google.common.collect.Lists;
+
+@RestController
+@RequestMapping(value = &quot;/new/cart&quot;)
+<span class="nc" id="L28">public class NewCartController {</span>
+
+    private List&lt;Book&gt; books;
+    private boolean cartPurchased;
+
+    @Autowired
+    private BookRepository bookRepo;
+
+    // read
+
+    @RequestMapping(method = RequestMethod.GET)
+    public NewCartResource seeYourCart() {
+<span class="nc" id="L40">        return new NewCartResource(initializeBooksInCart(), bookLinks(books), cartPurchased);</span>
+    }
+
+    // write
+
+    @RequestMapping(method = RequestMethod.POST)
+    public NewCartResource addBookToCart(@RequestBody final BookResource book) {
+<span class="nc" id="L47">        final String isbn = book.getBook().getIsbn();</span>
+<span class="nc" id="L48">        final Book bookToAdd = Checks.checkEntityExists(bookRepo.findByIsbn(book.getBook().getIsbn()), &quot;No Book found for isbn: &quot; + isbn);</span>
+
+<span class="nc" id="L50">        initializeBooksInCart().add(bookToAdd);</span>
+
+<span class="nc" id="L52">        return new NewCartResource(books, cartPurchased);</span>
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH)
+    public NewCartResource buy(@RequestBody final CartResource theCart) {
+<span class="nc" id="L57">        NewCartResource cart = new NewCartResource(initializeBooksInCart(), cartPurchased);</span>
+
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (theCart.isPurchased()) {</span>
+<span class="nc" id="L60">            cartPurchased = true;</span>
+<span class="nc" id="L61">            cart.setPurchased(cartPurchased);</span>
+        }
+
+<span class="nc" id="L64">        cart.add(new Link(&quot;http://localhost:8081/api/receipt/1&quot;).withRel(&quot;receipt&quot;));</span>
+<span class="nc" id="L65">        return cart;</span>
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void clearYourCart() {
+<span class="nc" id="L71">        initializeBooksInCart().clear();</span>
+<span class="nc" id="L72">        this.cartPurchased = false;</span>
+<span class="nc" id="L73">    }</span>
+
+    //
+
+    List&lt;Book&gt; initializeBooksInCart() {
+<span class="nc bnc" id="L78" title="All 2 branches missed.">        if (books == null) {</span>
+<span class="nc" id="L79">            this.books = Lists.newArrayList();</span>
+        }
+
+<span class="nc" id="L82">        return this.books;</span>
+    }
+
+    List&lt;Link&gt; bookLinks(final List&lt;Book&gt; theBooks) {
+<span class="nc" id="L86">        return theBooks.stream().map(this::getLink).collect(Collectors.toList());</span>
+    }
+
+    Link getLink(final Book book) {
+<span class="nc" id="L90">        return linkTo(BookController.class).slash(book.getIsbn()).withSelfRel();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

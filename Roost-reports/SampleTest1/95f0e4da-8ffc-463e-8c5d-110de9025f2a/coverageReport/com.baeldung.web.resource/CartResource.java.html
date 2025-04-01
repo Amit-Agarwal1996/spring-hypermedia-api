@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CartResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-hypermedia-api</a> &gt; <a href="index.source.html" class="el_package">com.baeldung.web.resource</a> &gt; <span class="el_source">CartResource.java</span></div><h1>CartResource.java</h1><pre class="source lang-java linenums">package com.baeldung.web.resource;
+
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
+import static org.springframework.hateoas.mvc.BasicLinkBuilder.linkToCurrentMapping;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
+import java.util.List;
+
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.ResourceSupport;
+
+import com.baeldung.model.Book;
+import com.baeldung.web.controller.CartController;
+
+public class CartResource extends ResourceSupport {
+
+    private List&lt;Book&gt; books;
+
+    private boolean purchased;
+
+    public CartResource() {
+<span class="nc" id="L23">        super();</span>
+<span class="nc" id="L24">    }</span>
+
+    public CartResource(final List&lt;Book&gt; books, final boolean purchased) {
+<span class="nc" id="L27">        super();</span>
+
+<span class="nc" id="L29">        this.books = books;</span>
+<span class="nc" id="L30">        this.purchased = purchased;</span>
+
+<span class="nc" id="L32">        this.add(linkTo(methodOn(CartController.class).seeYourCart()).withSelfRel());</span>
+<span class="nc bnc" id="L33" title="All 4 branches missed.">        if (!purchased &amp;&amp; !this.books.isEmpty()) {</span>
+<span class="nc" id="L34">            Link clearLink = null;</span>
+            try {
+<span class="nc" id="L36">                clearLink = linkTo(CartController.class, CartController.class.getMethod(&quot;clearYourCart&quot;)).withRel(&quot;clear&quot;);</span>
+<span class="nc" id="L37">            } catch (NoSuchMethodException | SecurityException e) {</span>
+<span class="nc" id="L38">                e.printStackTrace();</span>
+<span class="nc" id="L39">            }</span>
+<span class="nc" id="L40">            this.add(clearLink);</span>
+        }
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (purchased) {</span>
+<span class="nc" id="L43">            this.add(linkToCurrentMapping().slash(&quot;/receipt&quot;).slash(randomAlphanumeric(6)).withRel(&quot;receipt&quot;));</span>
+        }
+<span class="nc" id="L45">    }</span>
+
+    //
+
+    public void setBooks(final List&lt;Book&gt; books) {
+<span class="nc" id="L50">        this.books = books;</span>
+<span class="nc" id="L51">    }</span>
+
+    public List&lt;Book&gt; getBooks() {
+<span class="nc" id="L54">        return books;</span>
+    }
+
+    public boolean isPurchased() {
+<span class="nc" id="L58">        return purchased;</span>
+    }
+
+    public void setPurchased(boolean purchased) {
+<span class="nc" id="L62">        this.purchased = purchased;</span>
+<span class="nc" id="L63">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NewCartResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-hypermedia-api</a> &gt; <a href="index.source.html" class="el_package">com.baeldung.web.resource</a> &gt; <span class="el_source">NewCartResource.java</span></div><h1>NewCartResource.java</h1><pre class="source lang-java linenums">package com.baeldung.web.resource;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
+import java.util.List;
+
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.Resources;
+
+import com.baeldung.model.Book;
+import com.baeldung.web.controller.NewCartController;
+
+import jersey.repackaged.com.google.common.collect.Lists;
+
+public class NewCartResource extends ResourceSupport {
+
+    private final Resources&lt;Book&gt; books;
+
+    private boolean purchased;
+
+    public NewCartResource(final Iterable&lt;Book&gt; books, final boolean purchased) {
+<span class="nc" id="L24">        super();</span>
+
+<span class="nc" id="L26">        this.books = new Resources&lt;Book&gt;(books, Lists.newArrayList());</span>
+<span class="nc" id="L27">        this.purchased = purchased;</span>
+<span class="nc" id="L28">        this.add(linkTo(methodOn(NewCartController.class).seeYourCart()).withSelfRel());</span>
+<span class="nc" id="L29">    }</span>
+
+    public NewCartResource(final Iterable&lt;Book&gt; books, final List&lt;Link&gt; links, final boolean purchased) {
+<span class="nc" id="L32">        super();</span>
+
+<span class="nc" id="L34">        this.books = new Resources&lt;Book&gt;(books, links);</span>
+<span class="nc" id="L35">        this.purchased = purchased;</span>
+<span class="nc" id="L36">        this.add(linkTo(methodOn(NewCartController.class).seeYourCart()).withSelfRel());</span>
+<span class="nc" id="L37">    }</span>
+
+    //
+
+    public Resources&lt;Book&gt; getBooks() {
+<span class="nc" id="L42">        return books;</span>
+    }
+
+    public boolean isPurchased() {
+<span class="nc" id="L46">        return purchased;</span>
+    }
+
+    public void setPurchased(boolean purchased) {
+<span class="nc" id="L50">        this.purchased = purchased;</span>
+<span class="nc" id="L51">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
